@@ -6,71 +6,90 @@ layout: default
 title: Home
 ---
 <!-- HERO SECTION -->
-<section class="hero">
-  <div class="container">
-    <h1 class="brand-name">MLbible</h1>
-    <h2 class="tagline">
-      Machine Learning. AI. Statistics. Math.
-    </h2>
-    <a href="/courses/" class="primary-btn">
-      Explore Courses
-    </a>
+<section class="horizontal-scroll-section">
+  <div class="scroll-wrapper">
+    
+    <div class="promo-card courses-theme">
+      <div class="content-side">
+        <span class="badge">New lessons added.</span>
+        <h1>Unlock 50+ <br>AI & Data Lessons.</h1>
+        <p class="price-text">Free for a <strong>limited time period</strong> only.</p>
+        <a href="/courses" class="cta-button">Explore Catalog →</a>
+      </div>
+      <div class="graphic-side">
+        <div class="shape circle-shape"></div>
+      </div>
+    </div>
+
+    <div class="promo-card counselling-theme">
+      <div class="content-side">
+        <span class="badge">1-on-1 Mentorship</span>
+        <h1>Expert Career <br>Counselling.</h1>
+        <p class="price-text">Talk to industry veterans <strong>only at INR 500.</strong></p>
+        <a href="/counselling" class="cta-button">Book a Session →</a>
+      </div>
+      <div class="graphic-side">
+        <div class="shape diamond-shape"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- AUTO SCROLL METRICS -->
 <section class="metrics">
-  <div class="metrics-track">
+<div class="metrics-track">
 
     <div class="metric">
-      <h3>3000+</h3>
-      <span>Learners</span>
+    <h3>3000+</h3>
+    <span>Learners</span>
     </div>
 
     <div class="metric">
-      <h3>20+</h3>
-      <span>Courses</span>
+    <h3>20+</h3>
+    <span>Courses</span>
     </div>
 
     <div class="metric">
-      <h3>150+</h3>
-      <span>Concept Breakdowns</span>
+    <h3>150+</h3>
+    <span>Concept Breakdowns</span>
     </div>
 
     <div class="metric">
-      <h3>100%</h3>
-      <span>Clarity</span>
+    <h3>100%</h3>
+    <span>Clarity</span>
     </div>
 
     <div class="metric">
-      <h3>Zero</h3>
-      <span>Fluff</span>
+    <h3>Zero</h3>
+    <span>Fluff</span>
     </div>
 
-  </div>
-</section>
+    <!-- Duplicate for seamless loop -->
+    <div class="metric">
+    <h3>3000+</h3>
+    <span>Learners</span>
+    </div>
 
-<!-- FEATURES -->
-<section class="features container">
+    <div class="metric">
+    <h3>20+</h3>
+    <span>Courses</span>
+    </div>
 
-  <div class="feature-card">
-    <h3>🧠 Intuition First</h3>
-    <p>Concepts built as mental models before equations.</p>
-  </div>
+    <div class="metric">
+    <h3>150+</h3>
+    <span>Concept Breakdowns</span>
+    </div>
 
-  <div class="feature-card">
-    <h3>📐 Mathematical Depth</h3>
-    <p>Linear algebra, calculus and probability explained clearly.</p>
-  </div>
+    <div class="metric">
+    <h3>100%</h3>
+    <span>Clarity</span>
+    </div>
 
-  <div class="feature-card">
-    <h3>💻 Clean Implementation</h3>
-    <p>No magic snippets. Everything justified.</p>
-  </div>
+    <div class="metric">
+    <h3>Zero</h3>
+    <span>Fluff</span>
+    </div>
 
-  <div class="feature-card">
-    <h3>🎯 Interview + Production</h3>
-    <p>Understand tradeoffs and system-level reasoning.</p>
-  </div>
-
+</div>
 </section>
