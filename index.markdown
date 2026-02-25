@@ -25,7 +25,7 @@ title: Home
       <div class="content-side">
         <span class="badge">1-on-1 Mentorship</span>
         <h1>Expert Career <br>Counselling.</h1>
-        <p class="price-text">Talk to industry veterans <strong>only at INR 500.</strong></p>
+        <p class="price-text">Talk to an industry veteran <strong>only at INR 500.</strong></p>
         <a href="/counselling" class="cta-button">Book a Session →</a>
       </div>
       <div class="graphic-side">
