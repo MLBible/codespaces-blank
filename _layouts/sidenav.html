@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="course-layout-wrapper">
+   <button class="menu-toggle" aria-label="Open Menu">☰ Menu</button>
+   <aside class="course-sidebar">
+      <nav class="sidebar-nav">
+         <ul>
+            <li><a href="/courses/" class="sidebar-root">All Courses</a></li>
+            {% for item in site.data.navigation.sidebar_menu %}
+            <li class="sidebar-category">
+               <a href="{{ item.url | relative_url }}" 
+                  class="cat-title {% if page.url == item.url %}active-cat{% endif %}">
+               {{ item.title }}
+               </a>
+               {% if item.sub_items %}
+               <ul class="sub-lessons">
+                  {% for sub in item.sub_items %}
+                  <li>
+                     <a href="{{ sub.url | relative_url }}" 
+                        class="{% if page.url == sub.url %}active-lesson{% endif %}">
+                     {{ sub.title }}
+                     </a>
+                  </li>
+                  {% endfor %}
+               </ul>
+               {% endif %}
+            </li>
+            {% endfor %}
+         </ul>
+      </nav>
+   </aside>
+   <main class="course-content">
+      {{ content }}
+   </main>
+</div>

@@ -1,0 +1,55 @@
+---
+layout: sidenav
+---
+
+<section class="courses-section">
+  <div class="hub-intro">
+    {{ content }}
+  </div>
+
+  <div class="course-grid">
+    {% comment %}
+      1. Setup path variables for depth detection
+    {% endcomment %}
+    {% assign current_url_parts = page.url | split: "/" | reject: "" %}
+    {% assign current_depth = current_url_parts | size %}
+    {% assign target_depth = current_depth | plus: 1 %}
+    {% capture current_path_string %}{{ current_url_parts | join: "/" }}{% endcapture %}
+
+    {% comment %}
+      2. Filter all courses into a temporary array of immediate children
+    {% endcomment %}
+    {% assign child_pages = "" | split: "," %}
+    {% for course in site.courses %}
+      {% assign course_url_parts = course.url | split: "/" | reject: "" %}
+      {% assign course_depth = course_url_parts | size %}
+      {% capture course_path_string %}{{ course_url_parts | join: "/" }}{% endcapture %}
+
+      {% if course_depth == target_depth and course.path contains "index.md" %}
+        {% if course_path_string contains current_path_string %}
+          {% assign child_pages = child_pages | push: course %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% comment %}
+      3. Sort the children by the 'order' front matter attribute
+    {% endcomment %}
+    {% assign sorted_children = child_pages | sort: "order" %}
+
+    {% comment %}
+      4. Render the sorted cards
+    {% endcomment %}
+    {% for course in sorted_children %}
+      <div class="course-card random-theme" data-color-random>
+        <div class="course-info">
+          <span class="category">{{ course.category | default: "Module" }}</span>
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.description | truncate: 120 }}</p>
+          <a href="{{ course.url | relative_url }}" class="view-btn">Explore Section →</a>
+        </div>
+        <div class="mini-shape"></div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

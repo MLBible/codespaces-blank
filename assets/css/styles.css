@@ -337,6 +337,36 @@ body {
    Courses
 =================================== */
 
+/* The Main Wrapper */
+/* .hub-container {
+  max-width: 1200px;
+  margin: 0 auto;     
+  padding: 40px 20px; 
+  min-height: 60vh;   
+} */
+
+/* Enhancing the Header Area */
+.hub-header {
+  text-align: left;    /* Left-aligned looks more 'documented' and professional */
+  margin-bottom: 50px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.hub-header h1 {
+  font-size: 2.8rem;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.hub-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
 .courses-section {
   padding: 60px 5%;
   background-color: #fcfcfc;
@@ -349,6 +379,12 @@ body {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* 2. SHARED CARD STYLES */
@@ -404,14 +440,33 @@ body {
 }
 
 /* 3. THEME VARIATIONS (Subtle color accents) */
-.ml-theme { border-top: 5px solid var(--ml-color); }
+/* .ml-theme { border-top: 5px solid var(--ml-color); }
 .ml-theme .category { color: var(--ml-color); }
 
 .dl-theme { border-top: 5px solid var(--dl-color); }
 .dl-theme .category { color: var(--dl-color); }
 
 .nlp-theme { border-top: 5px solid var(--nlp-color); }
-.nlp-theme .category { color: var(--nlp-color); }
+.nlp-theme .category { color: var(--nlp-color); } */
+
+.course-card.random-theme {
+  /* Fallback color if JS is disabled */
+  --accent-color: #0056d2; 
+  border-top: 5px solid var(--accent-color);
+}
+
+.course-card.random-theme .category {
+  color: var(--accent-color);
+}
+
+.course-card.random-theme .view-btn {
+  color: var(--accent-color);
+}
+
+.course-card.random-theme .mini-shape {
+  background: var(--accent-color);
+  opacity: 0.1;
+}
 
 /* 4. MINI DECORATIVE SHAPE (Top Right) */
 .mini-shape {
@@ -420,7 +475,7 @@ body {
   right: -20px;
   width: 80px;
   height: 80px;
-  background: currentColor; /* Inherits text color */
+  background: currentColor;
   opacity: 0.05;
   border-radius: 50%;
 }
@@ -433,4 +488,175 @@ body {
 @media (max-width: 650px) {
   .course-grid { grid-template-columns: 1fr; } /* 1 per row on Mobile */
   .course-card { padding: 25px; }
+}
+
+/* ===================================
+   Back Link
+=================================== */
+
+.back-link {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--primary-blue);
+}
+
+
+/* Layout Wrapper */
+.course-layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Sidebar Styles */
+.course-sidebar {
+  width: 280px;
+  background: #f8fbff;
+  border-right: 1px solid #e1e8f0;
+  padding: 40px 20px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-root {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.sidebar-item {
+  margin-bottom: 8px;
+}
+
+.sidebar-item a {
+  text-decoration: none;
+  color: #444;
+  font-size: 0.95rem;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.sidebar-item a:hover, .sidebar-item a.active {
+  background: rgba(0, 86, 210, 0.1);
+  color: #0056d2;
+  font-weight: 600;
+}
+
+/* Main Content Adjustments */
+.hub-container {
+  flex-grow: 1;
+  padding: 40px 60px;
+  max-width: 1000px; /* Limits width for readability */
+}
+
+/* Mobile Setup */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: #0056d2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  
+  .course-sidebar {
+    position: fixed;
+    left: -280px; /* Hide off-screen */
+    transition: left 0.3s ease;
+    z-index: 999;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .course-sidebar.open {
+    left: 0; /* Slide in */
+  }
+  
+  .hub-container {
+    padding: 60px 20px;
+    width: 100%;
+  }
+}
+
+/* Category Title (Parents) */
+/* Sidebar Parent Category */
+/* Sidebar Parent */
+.sidebar-category {
+  margin-bottom: 24px;
+}
+
+.cat-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  letter-spacing: -0.2px;
+}
+
+.active-cat {
+  color: #0056d2;
+  background: rgba(0, 86, 210, 0.05);
+}
+
+/* Sub-lessons (Children) */
+.sub-lessons {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 20px; /* Indents the entire group */
+  border-left: 1px solid #e2e8f0; /* The vertical 'tree' line */
+}
+
+.sub-lessons li {
+  position: relative;
+}
+
+.sub-lessons li a {
+  font-size: 0.88rem;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  padding: 6px 16px;
+  transition: all 0.2s;
+}
+
+.sub-lessons li a:hover {
+  color: #0056d2;
+}
+
+.sub-lessons li a.active-lesson {
+  color: #0056d2;
+  font-weight: 600;
+  border-left: 2px solid #0056d2; /* Highlight current lesson */
+  margin-left: -1px; /* Align with the guide line */
+  background: #f0f7ff;
 }
