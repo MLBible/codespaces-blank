@@ -408,6 +408,13 @@ body {
   border-color: transparent;
 }
 
+/* The Main Content Area */
+.course-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  min-width: 0; /* Prevents flexbox overflow from code blocks */
+}
 .category {
   font-size: 0.7rem;
   font-weight: 800;
@@ -664,6 +671,43 @@ body {
 
 /* Lesson Styling */
 .lesson-container { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+.lesson-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.lesson-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2d3436;
+}
+
+.lesson-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2d3436;
+}
+
+.lesson-meta {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .course-layout-wrapper {
+    flex-direction: column;
+  }
+  
+  .course-content {
+    padding: 20px;
+  }
+  
+  .lesson-header h1 {
+    font-size: 1.8rem;
+  }
+}
 .prerequisites { background: #f0f7ff; border-left: 5px solid #007bff; padding: 15px; margin: 20px 0; }
 
 /* Interactive Q&A */
@@ -687,6 +731,43 @@ body {
 .interview-answer { padding: 1.5rem; border-top: 1px solid #e1e4e8; line-height: 1.6; }
 
 /* Master List Page */
+/* Master List Layout */
+.interview-master-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .topic-section { margin-bottom: 3rem; }
 .category-title { border-bottom: 3px solid #007bff; display: inline-block; padding-bottom: 5px; }
 .master-q-card { margin-bottom: 2rem; padding: 1.5rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; }
+.master-q-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.master-q-card h3 {
+  margin-top: 5px;
+  color: #2d3436;
+}
+
+.subtopic-tag {
+  background: #f1f2f6;
+  color: #57606f;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.answer-rendered {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #dfe6e9;
+  color: #444;
+}
+
+.MathJax_Display {
+  margin: 1.5rem 0 !important;
+}
