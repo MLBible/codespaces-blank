@@ -1,11 +1,10 @@
 ---
+layout: lesson
 title: Multiple Linear Regression
+readtime: 30
 order: 2
 permalink: /courses/classical-ml/multiple-linear-regression
 ---
-
-
-# Multiple Linear Regression
 
 ## Introduction
 
