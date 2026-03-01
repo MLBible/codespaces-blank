@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Support Vector Machines
+readtime: 30
+prerequisites:
+  - Linear Algebra basics
+  - Optimization Theory
+order: 4
+permalink: /courses/classical-ml/svm
+---
+
 # Support Vector Machines
 
 ## Introduction

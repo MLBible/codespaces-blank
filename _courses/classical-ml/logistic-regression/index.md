@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Logistic Regression
+readtime: 30
+prerequisites:
+  - Linear Algebra basics
+  - Optimization Theory
+order: 3
+permalink: /courses/classical-ml/logistic-regression
+---
+
 # Logistic Regression
 
 ## Introduction

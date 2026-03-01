@@ -660,3 +660,33 @@ body {
   margin-left: -1px; /* Align with the guide line */
   background: #f0f7ff;
 }
+
+
+/* Lesson Styling */
+.lesson-container { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+.prerequisites { background: #f0f7ff; border-left: 5px solid #007bff; padding: 15px; margin: 20px 0; }
+
+/* Interactive Q&A */
+.interview-q { border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin: 10px 0; background: #fff; }
+.interview-q summary { cursor: pointer; color: #007bff; list-style: none; }
+.answer-box { padding: 15px; background: #fafafa; border-top: 1px solid #eee; margin-top: 10px; }
+
+/* Glossary */
+.glossary-term { 
+  background-color: #fff3cd; 
+  border-bottom: 2px dashed #ffc107; 
+  cursor: help; 
+  position: relative;
+}
+
+/* Question Box in Lessons */
+.interview-q-wrapper { margin: 2rem 0; border: 2px solid #e1e4e8; border-radius: 8px; background: #fff; }
+.interview-summary { padding: 1rem; cursor: pointer; font-weight: 600; background: #f8f9fa; list-style: none; }
+.interview-summary:hover { background: #f0f2f5; }
+.q-label { color: #007bff; text-transform: uppercase; font-size: 0.8rem; margin-right: 10px; }
+.interview-answer { padding: 1.5rem; border-top: 1px solid #e1e4e8; line-height: 1.6; }
+
+/* Master List Page */
+.topic-section { margin-bottom: 3rem; }
+.category-title { border-bottom: 3px solid #007bff; display: inline-block; padding-bottom: 5px; }
+.master-q-card { margin-bottom: 2rem; padding: 1.5rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; }

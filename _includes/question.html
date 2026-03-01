@@ -1,0 +1,16 @@
+{% assign q = site.interviews | where: "q_id", include.id | first %}
+
+{% if q %}
+<div class="interview-q-wrapper">
+  <details class="interview-details">
+    <summary class="interview-summary">
+      <span class="q-label">Interview Question:</span> {{ q.question }}
+    </summary>
+    <div class="interview-answer">
+      {{ q.content | markdownify }}
+    </div>
+  </details>
+</div>
+{% else %}
+  <p style="color: red;">⚠️ Error: Question ID "{{ include.id }}" not found in _interviews.</p>
+{% endif %}

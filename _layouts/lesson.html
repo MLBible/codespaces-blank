@@ -1,0 +1,30 @@
+---
+layout: sidenav
+---
+
+<article class="lesson-container">
+  <header class="lesson-header">
+    <h1>{{ page.title }}</h1>
+    <div class="lesson-meta">
+      <span class="read-time">⏱ {{ page.readtime }} min read</span>
+    </div>
+    <p class="lesson-description">{{ page.description }}</p>
+  </header>
+
+  {% if page.prerequisites %}
+  <section class="prerequisites">
+    <h3>Prerequisites</h3>
+    <ul>
+      {% for pre in page.prerequisites %}
+        <li>{{ pre }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <hr>
+
+  <div class="lesson-body">
+    {{ content }}
+  </div>
+</article>
