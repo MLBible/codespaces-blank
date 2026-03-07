@@ -177,24 +177,22 @@
   padding: 0;
 }
 
-/* Make long equations scrollable instead of stretching page */
-// .lesson-body .MathJax_Display,
-// .lesson-body mjx-container[display="true"] {
-//   display: block;
-//   width: 100%;
-//   overflow-x: auto;
-//   overflow-y: hidden;
-//   padding-bottom: 0.4rem;
-// }
+.MathJax {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
-// .lesson-body mjx-container[display="true"]::-webkit-scrollbar {
-//   height: 6px;
-// }
+mjx-container[jax="CHTML"][display="true"] {
+  display: block !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  min-width: 0 !important;
+  max-width: 100%;
+}
 
-// .lesson-body mjx-container[display="true"]::-webkit-scrollbar-thumb {
-//   background: #c8d6ea;
-//   border-radius: 3px;
-// }
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 10px 0;
+}
 
 .math-scroll {
   overflow-x: auto;
@@ -255,13 +253,4 @@
     /* Optional: remove shadow to save performance/cleanliness */
     border: none;
   }
-
-  /* Force long equations/code to scroll instead of pushing the page out */
-  // .lesson-body pre, 
-  // .lesson-body .MathJax_Display, 
-  // .lesson-body table {
-  //   overflow-x: auto;
-  //   display: block;
-  //   width: 100%;
-  // }
 }

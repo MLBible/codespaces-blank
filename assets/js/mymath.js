@@ -2,8 +2,7 @@
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      tags: 'ams'
+      processEscapes: true
     },
     svg: { fontCache: 'global' }
   };
