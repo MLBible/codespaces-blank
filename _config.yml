@@ -34,8 +34,20 @@ plugins:
 collections:
   courses:
     output: true
+    permalink: /:collection/:path/
   interviews:
     output: false
+
+# Sass Configuration
+sass:
+  style: compressed # Minifies CSS for faster loading
+  sass_dir: _sass   # Tells Jekyll to look in the _sass folder for imports
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  math_engine: mathjax
 
 # Exclude from processing.
 # The following items will not be processed, by default.
