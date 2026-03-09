@@ -1,0 +1,45 @@
+/* ===================================
+   METRICS SCROLL
+=================================== */
+
+.metrics {
+  overflow: hidden;
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  background: #fafbff;
+  /* subtle brand tint */
+}
+
+.metrics-track {
+  display: flex;
+  gap: 5rem;
+  width: max-content;
+  animation: scroll-left 28s linear infinite;
+}
+
+.metric {
+  text-align: center;
+  min-width: 220px;
+}
+
+.metric h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--brand-color);
+}
+
+.metric p {
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

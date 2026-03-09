@@ -1,14 +1,19 @@
 <!-- NAVBAR -->
 <header class="navbar">
-    <div class="container nav-inner">
-    <a href="{{ '/' | relative_url }}" class="logo">
-    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="MLbible Logo">
-    </a>
-    <nav class="nav-links">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/courses/' | relative_url }}">Courses</a>
-        <a href="{{ '/interviews/' | relative_url }}">Prepare For Interviews</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-    </nav>
-    </div>
+   <div class="container nav-inner">
+      <a href="{{ '/' | relative_url }}" class="logo">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="MLbible Logo">
+      </a>
+      <button class="hamburger" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      </button>
+      <nav class="nav-links">
+         <a href="{{ '/' | relative_url }}">Home</a>
+         <a href="{{ '/courses/' | relative_url }}">Courses</a>
+         <a href="{{ '/interviews/' | relative_url }}">Prepare For Interviews</a>
+         <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+   </div>
 </header>

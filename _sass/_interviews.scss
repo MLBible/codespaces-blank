@@ -1,0 +1,112 @@
+/* Interactive Q&A */
+.interview-q {
+  border: 1px solid #dde5ef;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  background: #ffffff;
+}
+
+.interview-q summary {
+  cursor: pointer;
+  color: #0b63ce;
+  font-weight: 600;
+  list-style: none;
+}
+
+.answer-box {
+  padding: 1rem;
+  background: #f8fbff;
+  border-top: 1px solid #e6edf6;
+  margin-top: 0.8rem;
+  border-radius: 8px;
+}
+
+
+/* Question Box in Lessons */
+.interview-q-wrapper {
+  margin: 2rem 0;
+  border: 1px solid #dbe4ef;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.interview-summary {
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  font-weight: 650;
+  background: #f7faff;
+  list-style: none;
+}
+
+.interview-summary:hover {
+  background: #edf4ff;
+}
+
+.q-label {
+  color: #0b63ce;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+.interview-answer {
+  padding: 1.25rem 1.3rem;
+  border-top: 1px solid #e1e8f1;
+  line-height: 1.75;
+}
+
+/* Master List Page */
+/* Master List Layout */
+.interview-master-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.topic-section {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.master-q-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.master-q-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.master-q-card h3 {
+  margin-top: 5px;
+  color: #2d3436;
+}
+
+.subtopic-tag {
+  background: #f1f2f6;
+  color: #57606f;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.answer-rendered {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #dfe6e9;
+  color: #444;
+}

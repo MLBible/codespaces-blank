@@ -182,6 +182,10 @@
   overflow-y: hidden;
 }
 
+.MathJax_Display {
+  margin: 1.5rem 0 !important;
+}
+
 mjx-container[jax="CHTML"][display="true"] {
   display: block !important;
   overflow-x: auto !important;
@@ -245,12 +249,32 @@ mjx-container[jax="CHTML"][display="true"] mjx-math {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .lesson-container {
-    padding: 1.5rem 1rem;
+    padding: 0;
     /* Less padding on small screens */
     border-radius: 0;
     /* Optional: edge-to-edge looks cleaner on mobile */
     box-shadow: none;
     /* Optional: remove shadow to save performance/cleanliness */
     border: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .course-layout-wrapper {
+    flex-direction: column;
+  }
+
+  .course-content {
+    padding: 20px;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .lesson-body {
+    font-size: 1rem;
+    line-height: 1.75;
   }
 }
