@@ -1,163 +1,213 @@
+/* Prevent background scrolling when sidebar is open */
+body.sidebar-open {
+	overflow: hidden;
+}
+
 /* Layout Wrapper */
 .course-layout-wrapper {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
+	display: flex;
+	min-height: 100vh;
+	position: relative;
 }
 
 /* Sidebar Styles */
 .course-sidebar {
-  width: 280px;
-  background: #f8fbff;
-  border-right: 1px solid #e1e8f0;
-  padding: 40px 20px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 70px;
-  height: 100vh;
-  overflow-y: auto;
+	width: 280px;
+	background: #f8fbff;
+	border-right: 1px solid #e1e8f0;
+	padding: 40px 20px;
+	flex-shrink: 0;
+	position: sticky;
+	top: 70px;
+	height: calc(100vh - 70px);
+	overflow-y: auto;
+	/* KEY FIX: Prevents scroll chaining to body */
+	overscroll-behavior: contain;
+}
+
+
+/* Overlay Styling */
+
+.sidebar-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 998;
+	/* Just below sidebar */
+}
+
+
+.sidebar-close {
+
+	display: none;
+	/* Desktop */
+
 }
 
 .sidebar-nav ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .sidebar-root {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 20px;
-  display: block;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	color: #888;
+	margin-bottom: 20px;
+	display: block;
 }
 
 .sidebar-item {
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 
 .sidebar-item a {
-  text-decoration: none;
-  color: #444;
-  font-size: 0.95rem;
-  display: block;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.2s;
+	text-decoration: none;
+	color: #444;
+	font-size: 0.95rem;
+	display: block;
+	padding: 8px 12px;
+	border-radius: 8px;
+	transition: all 0.2s;
 }
 
 .sidebar-item a:hover,
 .sidebar-item a.active {
-  background: rgba(0, 86, 210, 0.1);
-  color: #0056d2;
-  font-weight: 600;
+	background: rgba(0, 86, 210, 0.1);
+	color: #0056d2;
+	font-weight: 600;
 }
 
 /* Main Content Adjustments */
 .hub-container {
-  flex-grow: 1;
-  padding: 40px 60px;
-  max-width: 1000px;
-  /* Limits width for readability */
+	flex-grow: 1;
+	padding: 40px 60px;
+	max-width: 1000px;
+	/* Limits width for readability */
 }
 
 /* Mobile Setup */
 .menu-toggle {
-  display: none;
-  /* Hidden on desktop */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: #0056d2;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	display: none;
+	/* Hidden on desktop */
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	background: #0056d2;
+	color: white;
+	border: none;
+	padding: 12px 20px;
+	border-radius: 50px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+	.menu-toggle {
+		display: block;
+	}
 
-  .course-sidebar {
-    position: fixed;
-    left: -280px;
-    /* Hide off-screen */
-    transition: left 0.3s ease;
-    z-index: 999;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-  }
+	.course-sidebar {
+		position: fixed;
+		left: -280px;
+		/* Hide off-screen */
+		transition: left 0.3s ease;
+		z-index: 999;
+		box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+		padding-top: 60px;
+		/* Space for close button */
 
-  .course-sidebar.open {
-    left: 0;
-    /* Slide in */
-  }
+	}
 
-  .hub-container {
-    padding: 60px 20px;
-    width: 100%;
-  }
+	.sidebar-overlay.open {
+
+		display: block;
+	}
+
+	.sidebar-close {
+		display: block;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 2rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+
+	.course-sidebar.open {
+		left: 0;
+		/* Slide in */
+	}
+
+	.hub-container {
+		padding: 60px 20px;
+		width: 100%;
+	}
 }
 
 /* Category Title (Parents) */
 /* Sidebar Parent Category */
 /* Sidebar Parent */
 .sidebar-category {
-  margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 
 .cat-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  text-decoration: none;
-  display: block;
-  padding: 8px 12px;
-  border-radius: 6px;
-  letter-spacing: -0.2px;
+	font-weight: 700;
+	font-size: 0.95rem;
+	color: #1a1a1a;
+	text-decoration: none;
+	display: block;
+	padding: 8px 12px;
+	border-radius: 6px;
+	letter-spacing: -0.2px;
 }
 
 .active-cat {
-  color: #0056d2;
-  background: rgba(0, 86, 210, 0.05);
+	color: #0056d2;
+	background: rgba(0, 86, 210, 0.05);
 }
 
 /* Sub-lessons (Children) */
 .sub-lessons {
-  list-style: none;
-  padding-left: 0;
-  margin: 8px 0 0 20px;
-  /* Indents the entire group */
-  border-left: 1px solid #e2e8f0;
-  /* The vertical 'tree' line */
+	list-style: none;
+	padding-left: 0;
+	margin: 8px 0 0 20px;
+	/* Indents the entire group */
+	border-left: 1px solid #e2e8f0;
+	/* The vertical 'tree' line */
 }
 
 .sub-lessons li {
-  position: relative;
+	position: relative;
 }
 
 .sub-lessons li a {
-  font-size: 0.88rem;
-  color: #555;
-  text-decoration: none;
-  display: block;
-  padding: 6px 16px;
-  transition: all 0.2s;
+	font-size: 0.88rem;
+	color: #555;
+	text-decoration: none;
+	display: block;
+	padding: 6px 16px;
+	transition: all 0.2s;
 }
 
 .sub-lessons li a:hover {
-  color: #0056d2;
+	color: #0056d2;
 }
 
 .sub-lessons li a.active-lesson {
-  color: #0056d2;
-  font-weight: 600;
-  border-left: 2px solid #0056d2;
-  /* Highlight current lesson */
-  margin-left: -1px;
-  /* Align with the guide line */
-  background: #f0f7ff;
+	color: #0056d2;
+	font-weight: 600;
+	border-left: 2px solid #0056d2;
+	/* Highlight current lesson */
+	margin-left: -1px;
+	/* Align with the guide line */
+	background: #f0f7ff;
 }
