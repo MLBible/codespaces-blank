@@ -38,58 +38,29 @@ title: Home
 
 <!-- AUTO SCROLL METRICS -->
 <section class="metrics">
-<div class="metrics-track">
+  <div class="metrics-track">
+    {% comment %} Loop twice for seamless scrolling {% endcomment %}
+    {% for i in (1..2) %}
+      {% for item in site.data.metrics %}
+        <div class="metric">
+          <h3>{{ item.value }}</h3>
+          <span>{{ item.label }}</span>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>
 
-    <div class="metric">
-    <h3>3000+</h3>
-    <span>Learners</span>
-    </div>
 
-    <div class="metric">
-    <h3>20+</h3>
-    <span>Courses</span>
-    </div>
-
-    <div class="metric">
-    <h3>150+</h3>
-    <span>Concept Breakdowns</span>
-    </div>
-
-    <div class="metric">
-    <h3>100%</h3>
-    <span>Clarity</span>
-    </div>
-
-    <div class="metric">
-    <h3>Zero</h3>
-    <span>Fluff</span>
-    </div>
-
-    <!-- Duplicate for seamless loop -->
-    <div class="metric">
-    <h3>3000+</h3>
-    <span>Learners</span>
-    </div>
-
-    <div class="metric">
-    <h3>20+</h3>
-    <span>Courses</span>
-    </div>
-
-    <div class="metric">
-    <h3>150+</h3>
-    <span>Concept Breakdowns</span>
-    </div>
-
-    <div class="metric">
-    <h3>100%</h3>
-    <span>Clarity</span>
-    </div>
-
-    <div class="metric">
-    <h3>Zero</h3>
-    <span>Fluff</span>
-    </div>
-
+<section class="container">
+<h2>Trending Courses</h2>
+<div class="course-grid">
+  {% for item in site.data.navigation.trending_courses %}
+    {% include course-card.html 
+       title=item.title 
+       url=item.url 
+       description=item.description 
+       category=item.category %}
+  {% endfor %}
 </div>
 </section>

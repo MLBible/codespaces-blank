@@ -1,0 +1,9 @@
+<div class="course-card random-theme" data-color-random>
+  <div class="course-info">
+    <span class="category">{{ include.category | default: "Machine Learning" }}</span>
+    <h3>{{ include.title }}</h3>
+    <p>{{ include.description | truncate: 80 }}</p>
+    <a href="{{ include.url | relative_url }}" class="view-btn">Explore Section →</a>
+  </div>
+  <div class="mini-shape"></div>
+</div>

@@ -2,7 +2,17 @@
 layout: sidenav
 ---
 
-<section class="courses-section">
+<div class="course-grid">
+  {% for item in site.data.navigation.sidebar_menu %}
+    {% include course-card.html 
+       title=item.title 
+       url=item.url 
+       description=item.description 
+       category=item.category %}
+  {% endfor %}
+</div>
+
+<!-- <section class="courses-section">
   <div class="hub-intro">
     {{ content }}
   </div>
@@ -52,4 +62,4 @@ layout: sidenav
       </div>
     {% endfor %}
   </div>
-</section>
+</section> -->
